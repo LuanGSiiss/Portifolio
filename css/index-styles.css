@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+}
+
+/* Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    padding: 16px 0;
+    border-bottom: 1px solid #334155;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f8fafc;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #00a8ff;
+}
+
+/* Container Principal*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.introducao {
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 span {
+    color: #00a8ff;
+}
+
+.cargo {
+    font-size: 24px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.sobre-mim {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17.5px;
+}
+
+/* Contato */
+.contato {
+    margin: 30px auto;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.links a {
+    color: #f8fafc;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #334155;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    background: #00a8ff;
+    color: #fff;
+}
+
+/* Carrossel de Tecnologias */
+.tecnologias-secao h2 { 
+    margin-bottom: 30px; 
+}
+
+.slider {
+    background: #1e293b;
+    height: 110px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.slide-seguir {
+    display: flex;
+    width: calc(200px * 14); /* Tamanho do item * quantidade total */
+    animation: scroll 20s linear infinite;
+}
+
+.slide-seguir:hover {
+    animation-play-state: paused;
+}
+
+.slide {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    transition: 0.3s;
+    position: relative;
+}
+
+/* Efeito para mostrar o nome no hover */
+.slide::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 95%;
+    font-size: 15px;
+    opacity: 0;
+    transition: 0.3s;
+    color: #00a8ff;
+}
+
+.slide:hover {
+    transform: scale(1.1);
+    color: #00a8ff;
+}
+
+.slide:hover::after {
+    opacity: 1;
+}
+
+/* Certificados */
+.certificados {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #00a8ff;
+    transform: translateY(-5px);
+}
+
+/* Baixar Curriculo */
+.acoes-principais {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.botao-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #00a8ff;
+    border: 2px solid #00a8ff;
+    border-radius: 50px; /* Estilo pílula, bem moderno */
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.botao-cv:hover {
+    background-color: #00a8ff;
+    color: #0f172a; /* Inverte a cor para o fundo escuro do seu site */
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.botao-cv i {
+    font-size: 1.1rem;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 8)); }
+}
